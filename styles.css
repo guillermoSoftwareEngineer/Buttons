@@ -1,0 +1,374 @@
+/* inicio de colores  usando variables */
+:root {
+    --primary: #4ecca3;
+    --secondary: #1a1a2e;
+    --accent: #e94560;
+    --text-color: #ffffff;
+}
+/* final de colores  usando variables */
+
+/* inicio de clases del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary);
+    color: var(--text-color);
+    margin: 0 10% 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* final de clases del body */
+
+/* inicio de clases de imagen */
+.image{
+    max-width: 40%;
+    border-radius: 50%;
+}
+/* final de clases de imagen */
+
+
+/* inicio de clases titulo y subtitulo */
+.tittle {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtittle {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* final de clases titulo y subtitulo */
+
+/* inicio de clases del boton general */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 3px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+/* final de clases del boton general */
+
+/* Inicio de clases del boton brillante */
+.btn-glow {
+    background-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-glow:hover { 
+    box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
+}
+/* final de clases del boton brillante */
+
+/* Inicio de clases del boton deslizante */
+.btn-slide {
+    background-color: var(--accent);
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-slide::after {
+    content: 'NUEVO';
+    color: --text-color;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    transition: left 0.3s ease;
+    z-index: 1;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    
+}
+
+.btn-slide:hover::after {
+    left: 0;
+}
+
+.btn-slide:hover {
+    color: var(--secondary);
+}
+/* final de clases del boton deslizante */
+
+/* Inicio de clases del boton que rebota */
+.btn-bounce {
+    background-color: var(--primary);
+}
+
+.btn-bounce:hover {
+    animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* final de clases del boton que rebota */
+
+/* inicio del boton ondas */
+.btn-ripple {
+    background-color: var(--accent);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ripple::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    background: var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.btn-ripple:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+/* final de clases del boton que ondas */
+
+/* Inicio de clases del boton con pulso */
+.btn-pulse {
+    background-color: var(--accent);
+}
+
+.btn-pulse:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+/* final de clases del boton con pulso */
+
+/* inicio de clases del boton que rota */
+.btn-rotate {
+    background-color: var(--primary);
+}
+
+.btn-rotate:hover {
+    transform: rotate(360deg);
+}
+/* final de clases del boton que rota */
+
+/* Inicio de clases del boton con texto que */
+.btn-hover-text {
+    background-color: var(--accent);
+    position: relative;
+}
+
+.btn-hover-text::after {
+    content: 'NUEVO';
+    color: --text-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-hover-text:hover {
+    color: transparent; /* Oculta el texto principal */
+}
+
+.btn-hover-text:hover::after {
+    opacity: 1;
+}
+/* final de clases del boton con texto que */
+
+/* Inicio de clases del boton que se hace pequeño */
+.btn-shrink {
+    background-color: var(--primary);
+}
+
+.btn-shrink:hover {
+    transform: scale(0.9);
+}
+/* final de clases del boton que se hace pequeño */
+
+/* Inicio de clases del boton que se hace grande */
+.btn-expand {
+    background-color: var(--accent);
+}
+
+.btn-expand:hover {
+    transform: scale(1.1);
+}
+/* final de clases del boton que se hace grande */
+
+/* Inicio de clases del boton que cambia el gradiente */
+.btn-gradient {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+}
+/* final de clases del boton que cambia el gradiente */
+
+/* inicio clases footer  */
+
+/* Inicio del footer */
+.footer {
+    background-color: var(--secondary);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1); /* Blanco para contrastar con fondo oscuro */
+    transition: transform 0.3s ease;
+}
+
+.footer-link:hover .footer-icon {
+    transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
+    filter: brightness(1) invert(0); /* Cambia a color invertido */
+}
+
+/* final clases footer  */
+
+
+/* Inicio Responsive, con set points */
+
+@media (max-width: 425px) {
+
+    /* inicio body responsive 425px */
+    body {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    /* final body responsive 425px */
+
+    /* inicio contenedor de botones 425px */
+    .button-container {
+        display: flex;
+        flex-direction: row; /* Botones alineados en fila */
+        flex-wrap: wrap; /* Permite que los botones se ajusten si hay más de uno */
+        justify-content: center; /* Centra los botones horizontalmente */
+        gap: 10px; /* Espaciado entre botones */
+    }
+    /* final contenedor de botones 425px */
+
+
+    /* inicio de clases footer responsive 425px */
+    .footer-container {
+        flex-direction: column; /* Coloca los iconos en columna */
+        gap: 15px;
+    }
+
+    .footer-icon {
+        width: 30px; /* Ajusta el tamaño de los iconos */
+        height: 30px;
+    }
+    /* final de clases footer responsive 425px */
+
+}
+
+
+@media (min-width: 768px) {
+
+    /* inicio de clases responsive titulo subtitulo en 768px */
+    body {
+        display: flex; /* Diseño por defecto */
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        gap: 20px;
+        justify-content: center; 
+        align-items: center;
+        padding:5%
+    }
+/*  */
+    /* final de clases responsive titulo subtitulo en 768px */
+
+    
+    /* inicio de clases de imagen en 768px*/
+
+    .image{
+        max-width: 70%;
+        border-radius: 50%;
+    }
+
+    /* final de clases de imagen */
+
+    /* inicio de clases footer 768px */
+    .footer-container {
+        flex-direction: row; /* Coloca los iconos en fila */
+        gap: 30px;
+    }
+
+    .footer-icon {
+        width: 50px; /* Tamaño más grande para pantallas grandes */
+        height: 50px;
+    }
+    /* final de clases footer 768px */
+
+
+}
+/* final Responsive, con set points en 768px*/
