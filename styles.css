@@ -20,6 +20,10 @@ body {
 }
 /* final de clases del body */
 
+.tittle.container{
+    margin-top: 5%;
+}
+
 /* inicio de clases de imagen */
 .image{
     max-width: 40%;
@@ -213,7 +217,7 @@ body {
 }
 
 .btn-hover-text:hover {
-    color: transparent; /* Oculta el texto principal */
+    color: transparent; 
 }
 
 .btn-hover-text:hover::after {
@@ -275,15 +279,15 @@ body {
 }
 
 .footer-icon {
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    filter: brightness(0) invert(1); /* Blanco para contrastar con fondo oscuro */
     transition: transform 0.3s ease;
 }
 
 .footer-link:hover .footer-icon {
-    transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
-    filter: brightness(1) invert(0); /* Cambia a color invertido */
+    transform: scale(1.2); 
+    filter: brightness(1) invert(0); 
 }
 
 /* final clases footer  */
@@ -305,23 +309,24 @@ body {
     /* inicio contenedor de botones 425px */
     .button-container {
         display: flex;
-        flex-direction: row; /* Botones alineados en fila */
-        flex-wrap: wrap; /* Permite que los botones se ajusten si hay más de uno */
-        justify-content: center; /* Centra los botones horizontalmente */
-        gap: 10px; /* Espaciado entre botones */
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px; 
     }
     /* final contenedor de botones 425px */
 
 
     /* inicio de clases footer responsive 425px */
     .footer-container {
-        flex-direction: column; /* Coloca los iconos en columna */
+        flex-direction: column; 
         gap: 15px;
     }
 
     .footer-icon {
-        width: 30px; /* Ajusta el tamaño de los iconos */
+        width: 30px; 
         height: 30px;
+        border-radius: 50%;
     }
     /* final de clases footer responsive 425px */
 
@@ -332,43 +337,65 @@ body {
 
     /* inicio de clases responsive titulo subtitulo en 768px */
     body {
-        display: flex; /* Diseño por defecto */
+        display: grid; 
+        grid-template-rows: auto auto 1fr; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-areas:
+            "logo buttons"
+            "logo buttons"
+            "footer footer"; 
+        gap: 20px; 
+        align-items: center;
+        justify-content: center;
         margin-bottom: 20px;
     }
 
+    .tittle.container {
+        grid-area: logo; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20%;
+    }
+
     .button-container {
+        grid-area: buttons; 
         flex-direction: row; 
         flex-wrap: wrap; 
         gap: 20px;
         justify-content: center; 
         align-items: center;
-        padding:5%
+        padding: 5%;
+        margin-top: 20%;
     }
-/*  */
     /* final de clases responsive titulo subtitulo en 768px */
 
-    
-    /* inicio de clases de imagen en 768px*/
-
-    .image{
-        max-width: 70%;
+    /* inicio de clases de imagen en 768px */
+    .image {
+        max-width: 50%;
         border-radius: 50%;
     }
-
     /* final de clases de imagen */
 
     /* inicio de clases footer 768px */
+    .footer {
+        grid-area: footer; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
     .footer-container {
-        flex-direction: row; /* Coloca los iconos en fila */
+        flex-direction: row; 
         gap: 30px;
     }
 
     .footer-icon {
-        width: 50px; /* Tamaño más grande para pantallas grandes */
+        width: 50px; 
         height: 50px;
+        border-radius: 50%;
     }
     /* final de clases footer 768px */
-
-
 }
-/* final Responsive, con set points en 768px*/
